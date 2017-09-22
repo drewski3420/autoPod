@@ -1,6 +1,9 @@
-from dateutil import parser
-from dateutil.tz import *
-from datetime import *
+from datetime import datetime as d
+import pytz
 
-print(datetime.now(tzutc()).tzname())
-print(datetime.now(tzlocal()).tzname())
+today_date = d.now(pytz.utc)
+
+
+with open('data/lastRun','w') as data_file:
+    data_file.write(str(today_date))
+    data_file.close()
