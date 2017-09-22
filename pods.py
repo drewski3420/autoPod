@@ -13,6 +13,14 @@ import os
 
 urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 
+#todo
+'''
+- implement logging
+- speed up pods
+- refactor pods into a real json format
+- log/delete listened
+- GUI?
+'''
 
 def create_conn():
     try:
@@ -52,7 +60,7 @@ def get_last_run():
     except:
         print('error in print_last_run')
 
-def load_db(db, pods, last_date):
+def get_pod_details(db, pods, last_date):
     try:
         tz = pytz.timezone('US/Eastern')
         cur = db.cursor()
@@ -136,11 +144,10 @@ def main():
         db = create_conn()
         pods = get_pod_list()
         last_date = get_last_run()
-        db = load_db(db, pods, last_date)
-        
+        db = get_pod_details(db, pods, last_date)
+        run_complete = get_run_end_date()
         download_pods(db)
-        #run_complete = get_run_end_date()
-        #write_last_run(run_complete)
+        write_last_run(run_complete)
     except:
         print ('Error')
 
