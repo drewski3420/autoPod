@@ -1,76 +1,298 @@
 {
-    "Reply All" : "HTTP://Feeds.gimletmedia.com/hearreplyall"
-    ,"Benjamen Walker\"s Theory of Everything" : "http://feeds.prx.org/toe"
-    ,"Constitutional" : "http://podcast.posttv.com/itunes-5951e18ce4b056ae8fa8e4b2.xml"
-    ,"Kurt Vonneguys" : "http://feeds.soundcloud.com/users/soundcloud:users:263797969/sounds.rss"
-    ,"LeVar Burton Reads" : "https://rss.art19.com/levar-burton-reads"
-    ,"KCRW\"s Here Be Monsters" : "http://feeds.feedburner.com/herebemonsterspodcast/"
-    ,"Worldly" : "http://feeds.feedburner.com/voxworldly"
-    ,"Longform" : "http://longform.libsyn.com/rss"
-    ,"This American Life" : "http://feed.thisamericanlife.org/talpodcast"
-    ,"The Daily 202\"s Big Idea" : "https://podcast.posttv.com/itunes/daily-202-big-idea.xml"
-    ,"Uncivil" : "https://feeds.megaphone.fm/uncivil"
-    ,"Larry Wilmore: Black on the Air" : "http://feeds.feedburner.com/larrywilmoreblackontheair"
-    ,"The United States of Anxiety" : "http://feeds.wnyc.org/unitedstatesofanxiety"
-    ,"Science Solved It" : "http://rss.acast.com/sciencesolvedit"
-    ,"Invisibilia" : "https://www.npr.org/rss/podcast.php?id=510307"
-    ,"Homecoming" : "http://feeds.gimletmedia.com/homecomingshow"
-    ,"What Trump Can Teach Us About Con Law" : "http://feeds.TrumpConLaw.com/TrumpConLaw"
-    ,"Outside/In" : "http://feeds.megaphone.fm/PPY5156495451"
-    ,"Every Little Thing" : "http://feeds.gimletmedia.com/eltshow"
-    ,"Flash Forward" : "http://www.flashforwardpod.com/feed/podcast/"
-    ,"Radiolab" : "http://feeds.wnyc.org/radiolab"
-    ,"Only A Game" : "https://www.npr.org/rss/podcast.php?id=510052"
-    ,"The Allusionist" : "http://feeds.theallusionist.org/Allusionist"
-    ,"Lovett or Leave It" : "http://feeds.feedburner.com/lovett-or-leave-it"
-    ,"the memory palace" : "http://feeds.thememorypalace.us/thememorypalace"
-    ,"You Are Not So Smart" : "http://feeds.soundcloud.com/users/soundcloud:users:16745745/sounds.rss"
-    ,"Story of the Day : NPR" : "https://www.npr.org/templates/rss/podlayer.php?id=1090"
-    ,"Sidedoor" : "http://feeds.si.edu/SmithsonianSidedoor"
-    ,"Strangers" : "http://feeds.kcrw.com/kcrw/sg"
-    ,"Linux Action News" : "http://linuxactionnews.com/rss"
-    ,"Freakonomics Radio" : "http://feeds.feedburner.com/freakonomicsradio"
-    ,"On the Media" : "http://feeds.wnyc.org/onthemedia"
-    ,"Radio Diaries" : "http://feed.radiodiaries.org/radio-diaries?id=510288"
-    ,"FanGraphs Baseball" : "http://www.fangraphs.com/blogs/feed/podcast"
-    ,"The Ezra Klein Show" : "http://feeds.feedburner.com/TheEzraKleinShow"
-    ,"Pod Save America" : "http://feeds.feedburner.com/pod-save-america"
-    ,"Embedded" : "https://www.npr.org/rss/podcast.php?id=510311"
-    ,"Vox\"s The Weeds" : "http://feeds.feedburner.com/voxtheweeds"
-    ,"Fictional" : "http://fictional.libsyn.com/rss"
-    ,"pluspluspodcast" : "http://rss.acast.com/pluspluspodcast"
-    ,"The Ringer MLB Show" : "https://rss.art19.com/the-ringer-mlb-show"
-    ,"Love + Radio" : "http://feeds.feedburner.com/loveplusradio"
-    ,"30 For 30 Podcasts" : "http://www.espn.com/espnradio/podcast/feeds/itunes/podCast?id=19472136"
-    ,"Can He Do That?" : "http://podcast.posttv.com/itunes-58861635e4b039a652877de6.xml"
-    ,"Imaginary Worlds" : "http://feeds.feedburner.com/imaginaryworldspodcast"
-    ,"The Uncertain Hour" : "https://feeds.publicradio.org/public_feeds/the-uncertain-hour/itunes/rss"
-    ,"Dooley Noted" : "http://www.omnycontent.com/d/playlist/a858b0a5-e5e6-4a14-9717-a70b010facc1/2e8d881b-21cf-4683-a9b4-a77600a8078c/2bbfdb41-040e-4002-8880-a77600a8079a/podcast.rss"
-    ,"terrestrial" : "https://kuow.drupal.publicbroadcasting.net/podcasts/102329/rss.xml"
-    ,"Planet Money" : "http://www.npr.org/rss/podcast.php?id=510289"
-    ,"Ear Hustle" : "http://feeds.earhustlesq.com/earhustlesq"
-    ,"Pod Save the World" : "http://feeds.feedburner.com/pod-save-the-world"
-    ,"Up First" : "https://www.npr.org/rss/podcast.php?id=510318"
-    ,"FiveThirtyEight Politics" : "http://www.espn.com/espnradio/podcast/feeds/itunes/podCast?id=14554755"
-    ,"Crimetown" : "http://feeds.gimletmedia.com/crimetownshow"
-    ,"Something True" : "https://www.idlethumbs.net/feeds/somethingtrue"
-    ,"Myths and Legends" : "http://mythpodcast.libsyn.com/rss"
-    ,"The Lawfare Podcast" : "http://lawfare.libsyn.com/rss"
-    ,"Cosmic Vertigo - ABC RN" : "http://www.abc.net.au/radionational/feed/8294152/podcast.xml"
-    ,"S-Town" : "http://feeds.stownpodcast.org/stownpodcast"
-    ,"The Next Picture Show" : "http://feeds.megaphone.fm/FLM2375047009"
-    ,"Undone" : "http://feeds.gimletmedia.com/undoneshow"
-    ,"Very Bad Words" : "https://audioboom.com/channels/4686307.rss"
-    ,"99% Invisible" : "http://feeds.99percentinvisible.org/99percentinvisible?"
-    ,"The Nerdist" : "http://nerdist.libsyn.com/rss"
-    ,"Beginner" : "https://rss.simplecast.com/podcasts/3485/rss"
-    ,"Radiolab Presents: More Perfect" : "http://feeds.wnyc.org/moreperfect"
-    ,"Note to Self" : "http://feeds.wnyc.org/notetoself-podcast"
-    ,"Slate\"s Amicus with Dahlia Lithwick" : "http://feeds.feedburner.com/SlateAmicusWithDahliaLithwick"
-    ,"I Tell My Husband The News" : "http://feeds.soundcloud.com/users/soundcloud:users:188712331/sounds.rss"
-    ,"The Turnaround with Jesse Thorn" : "http://maximumfun.org/feeds/tt.xml"
-    ,"The Truth" : "http://feeds.feedburner.com/thetruthapm"
-    ,"TLDR" : "http://feeds.wnyc.org/otm_tldr"
-    ,"Criminal" : "http://feeds.thisiscriminal.com/CriminalShow"
-    ,"The World in Words" : "http://feeds.feedburner.com/pri/world-words"
+    "0": {
+        "pod_name": "Reply All",
+        "pod_url": "HTTP://Feeds.gimletmedia.com/hearreplyall"
+    },
+    "1": {
+        "pod_name": "Benjamen Walker\"s Theory of Everything",
+        "pod_url": "http://feeds.prx.org/toe"
+    },
+    "2": {
+        "pod_name": "Constitutional",
+        "pod_url": "http://podcast.posttv.com/itunes-5951e18ce4b056ae8fa8e4b2.xml"
+    },
+    "3": {
+        "pod_name": "Kurt Vonneguys",
+        "pod_url": "http://feeds.soundcloud.com/users/soundcloud:users:263797969/sounds.rss"
+    },
+    "4": {
+        "pod_name": "LeVar Burton Reads",
+        "pod_url": "https://rss.art19.com/levar-burton-reads"
+    },
+    "5": {
+        "pod_name": "KCRW\"s Here Be Monsters",
+        "pod_url": "http://feeds.feedburner.com/herebemonsterspodcast/"
+    },
+    "6": {
+        "pod_name": "Worldly",
+        "pod_url": "http://feeds.feedburner.com/voxworldly"
+    },
+    "7": {
+        "pod_name": "Longform",
+        "pod_url": "http://longform.libsyn.com/rss"
+    },
+    "8": {
+        "pod_name": "This American Life",
+        "pod_url": "http://feed.thisamericanlife.org/talpodcast"
+    },
+    "9": {
+        "pod_name": "The Daily 202\"s Big Idea",
+        "pod_url": "https://podcast.posttv.com/itunes/daily-202-big-idea.xml"
+    },
+    "10": {
+        "pod_name": "Uncivil",
+        "pod_url": "https://feeds.megaphone.fm/uncivil"
+    },
+    "11": {
+        "pod_name": "Larry Wilmore: Black on the Air",
+        "pod_url": "http://feeds.feedburner.com/larrywilmoreblackontheair"
+    },
+    "12": {
+        "pod_name": "The United States of Anxiety",
+        "pod_url": "http://feeds.wnyc.org/unitedstatesofanxiety"
+    },
+    "13": {
+        "pod_name": "Science Solved It",
+        "pod_url": "http://rss.acast.com/sciencesolvedit"
+    },
+    "14": {
+        "pod_name": "Invisibilia",
+        "pod_url": "https://www.npr.org/rss/podcast.php?id=510307"
+    },
+    "15": {
+        "pod_name": "Homecoming",
+        "pod_url": "http://feeds.gimletmedia.com/homecomingshow"
+    },
+    "16": {
+        "pod_name": "What Trump Can Teach Us About Con Law",
+        "pod_url": "http://feeds.TrumpConLaw.com/TrumpConLaw"
+    },
+    "17": {
+        "pod_name": "Outside/In",
+        "pod_url": "http://feeds.megaphone.fm/PPY5156495451"
+    },
+    "18": {
+        "pod_name": "Every Little Thing",
+        "pod_url": "http://feeds.gimletmedia.com/eltshow"
+    },
+    "19": {
+        "pod_name": "Flash Forward",
+        "pod_url": "http://www.flashforwardpod.com/feed/podcast/"
+    },
+    "20": {
+        "pod_name": "Radiolab",
+        "pod_url": "http://feeds.wnyc.org/radiolab"
+    },
+    "21": {
+        "pod_name": "Only A Game",
+        "pod_url": "https://www.npr.org/rss/podcast.php?id=510052"
+    },
+    "22": {
+        "pod_name": "The Allusionist",
+        "pod_url": "http://feeds.theallusionist.org/Allusionist"
+    },
+    "23": {
+        "pod_name": "Lovett or Leave It",
+        "pod_url": "http://feeds.feedburner.com/lovett-or-leave-it"
+    },
+    "24": {
+        "pod_name": "the memory palace",
+        "pod_url": "http://feeds.thememorypalace.us/thememorypalace"
+    },
+    "25": {
+        "pod_name": "You Are Not So Smart",
+        "pod_url": "http://feeds.soundcloud.com/users/soundcloud:users:16745745/sounds.rss"
+    },
+    "26": {
+        "pod_name": "Story of the Day : NPR",
+        "pod_url": "https://www.npr.org/templates/rss/podlayer.php?id=1090"
+    },
+    "27": {
+        "pod_name": "Sidedoor",
+        "pod_url": "http://feeds.si.edu/SmithsonianSidedoor"
+    },
+    "28": {
+        "pod_name": "Strangers",
+        "pod_url": "http://feeds.kcrw.com/kcrw/sg"
+    },
+    "29": {
+        "pod_name": "Linux Action News",
+        "pod_url": "http://linuxactionnews.com/rss"
+    },
+    "30": {
+        "pod_name": "Freakonomics Radio",
+        "pod_url": "http://feeds.feedburner.com/freakonomicsradio"
+    },
+    "31": {
+        "pod_name": "On the Media",
+        "pod_url": "http://feeds.wnyc.org/onthemedia"
+    },
+    "32": {
+        "pod_name": "Radio Diaries",
+        "pod_url": "http://feed.radiodiaries.org/radio-diaries?id=510288"
+    },
+    "33": {
+        "pod_name": "FanGraphs Baseball",
+        "pod_url": "http://www.fangraphs.com/blogs/feed/podcast"
+    },
+    "34": {
+        "pod_name": "The Ezra Klein Show",
+        "pod_url": "http://feeds.feedburner.com/TheEzraKleinShow"
+    },
+    "35": {
+        "pod_name": "Pod Save America",
+        "pod_url": "http://feeds.feedburner.com/pod-save-america"
+    },
+    "36": {
+        "pod_name": "Embedded",
+        "pod_url": "https://www.npr.org/rss/podcast.php?id=510311"
+    },
+    "37": {
+        "pod_name": "Vox\"s The Weeds",
+        "pod_url": "http://feeds.feedburner.com/voxtheweeds"
+    },
+    "38": {
+        "pod_name": "Fictional",
+        "pod_url": "http://fictional.libsyn.com/rss"
+    },
+    "39": {
+        "pod_name": "pluspluspodcast",
+        "pod_url": "http://rss.acast.com/pluspluspodcast"
+    },
+    "40": {
+        "pod_name": "The Ringer MLB Show",
+        "pod_url": "https://rss.art19.com/the-ringer-mlb-show"
+    },
+    "41": {
+        "pod_name": "Love + Radio",
+        "pod_url": "http://feeds.feedburner.com/loveplusradio"
+    },
+    "42": {
+        "pod_name": "30 For 30 Podcasts",
+        "pod_url": "http://www.espn.com/espnradio/podcast/feeds/itunes/podCast?id=19472136"
+    },
+    "43": {
+        "pod_name": "Can He Do That?",
+        "pod_url": "http://podcast.posttv.com/itunes-58861635e4b039a652877de6.xml"
+    },
+    "44": {
+        "pod_name": "Imaginary Worlds",
+        "pod_url": "http://feeds.feedburner.com/imaginaryworldspodcast"
+    },
+    "45": {
+        "pod_name": "The Uncertain Hour",
+        "pod_url": "https://feeds.publicradio.org/public_feeds/the-uncertain-hour/itunes/rss"
+    },
+    "46": {
+        "pod_name": "Dooley Noted",
+        "pod_url": "http://www.omnycontent.com/d/playlist/a858b0a5-e5e6-4a14-9717-a70b010facc1/2e8d881b-21cf-4683-a9b4-a77600a8078c/2bbfdb41-040e-4002-8880-a77600a8079a/podcast.rss"
+    },
+    "47": {
+        "pod_name": "terrestrial",
+        "pod_url": "https://kuow.drupal.publicbroadcasting.net/podcasts/102329/rss.xml"
+    },
+    "48": {
+        "pod_name": "Planet Money",
+        "pod_url": "http://www.npr.org/rss/podcast.php?id=510289"
+    },
+    "49": {
+        "pod_name": "Ear Hustle",
+        "pod_url": "http://feeds.earhustlesq.com/earhustlesq"
+    },
+    "50": {
+        "pod_name": "Pod Save the World",
+        "pod_url": "http://feeds.feedburner.com/pod-save-the-world"
+    },
+    "51": {
+        "pod_name": "Up First",
+        "pod_url": "https://www.npr.org/rss/podcast.php?id=510318"
+    },
+    "52": {
+        "pod_name": "FiveThirtyEight Politics",
+        "pod_url": "http://www.espn.com/espnradio/podcast/feeds/itunes/podCast?id=14554755"
+    },
+    "53": {
+        "pod_name": "Crimetown",
+        "pod_url": "http://feeds.gimletmedia.com/crimetownshow"
+    },
+    "54": {
+        "pod_name": "Something True",
+        "pod_url": "https://www.idlethumbs.net/feeds/somethingtrue"
+    },
+    "55": {
+        "pod_name": "Myths and Legends",
+        "pod_url": "http://mythpodcast.libsyn.com/rss"
+    },
+    "56": {
+        "pod_name": "The Lawfare Podcast",
+        "pod_url": "http://lawfare.libsyn.com/rss"
+    },
+    "57": {
+        "pod_name": "Cosmic Vertigo - ABC RN",
+        "pod_url": "http://www.abc.net.au/radionational/feed/8294152/podcast.xml"
+    },
+    "58": {
+        "pod_name": "S-Town",
+        "pod_url": "http://feeds.stownpodcast.org/stownpodcast"
+    },
+    "59": {
+        "pod_name": "The Next Picture Show",
+        "pod_url": "http://feeds.megaphone.fm/FLM2375047009"
+    },
+    "60": {
+        "pod_name": "Undone",
+        "pod_url": "http://feeds.gimletmedia.com/undoneshow"
+    },
+    "61": {
+        "pod_name": "Very Bad Words",
+        "pod_url": "https://audioboom.com/channels/4686307.rss"
+    },
+    "62": {
+        "pod_name": "99% Invisible",
+        "pod_url": "http://feeds.99percentinvisible.org/99percentinvisible?"
+    },
+    "63": {
+        "pod_name": "The Nerdist",
+        "pod_url": "http://nerdist.libsyn.com/rss"
+    },
+    "64": {
+        "pod_name": "Beginner",
+        "pod_url": "https://rss.simplecast.com/podcasts/3485/rss"
+    },
+    "65": {
+        "pod_name": "Radiolab Presents: More Perfect",
+        "pod_url": "http://feeds.wnyc.org/moreperfect"
+    },
+    "66": {
+        "pod_name": "Note to Self",
+        "pod_url": "http://feeds.wnyc.org/notetoself-podcast"
+    },
+    "67": {
+        "pod_name": "Slate\"s Amicus with Dahlia Lithwick",
+        "pod_url": "http://feeds.feedburner.com/SlateAmicusWithDahliaLithwick"
+    },
+    "68": {
+        "pod_name": "I Tell My Husband The News",
+        "pod_url": "http://feeds.soundcloud.com/users/soundcloud:users:188712331/sounds.rss"
+    },
+    "69": {
+        "pod_name": "The Turnaround with Jesse Thorn",
+        "pod_url": "http://maximumfun.org/feeds/tt.xml"
+    },
+    "70": {
+        "pod_name": "The Truth",
+        "pod_url": "http://feeds.feedburner.com/thetruthapm"
+    },
+    "71": {
+        "pod_name": "TLDR",
+        "pod_url": "http://feeds.wnyc.org/otm_tldr"
+    },
+    "72": {
+        "pod_name": "Criminal",
+        "pod_url": "http://feeds.thisiscriminal.com/CriminalShow"
+    },
+    "73": {
+        "pod_name": "The World in Words",
+        "pod_url": "http://feeds.feedburner.com/pri/world-words"
+    }
 }

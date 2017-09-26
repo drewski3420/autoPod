@@ -1,0 +1,108 @@
+INFO:root:Creating Connection
+INFO:root:Creating Tables
+INFO:root:Created Tables
+INFO:root:Created Connection
+INFO:root:Getting Pods
+INFO:root:Getting Pod Lsit from JSON file
+INFO:root:Got Pod List from JSON file
+INFO:root:Got Pods
+INFO:root:Getting Last Date
+INFO:root:Getting Last Run Date
+INFO:root:Got Last Run Date 2017-09-22 19:01:48.236971+00:00
+INFO:root:Got Last Date
+INFO:root:Getting Pod Details
+INFO:root:Inserting Pod Constitutional Episode Episode 07: Congress and citizens URL http://www.podtrac.com/pts/redirect.mp3/podcast.posttv.com/washpost-production/5951e18ce4b056ae8fa8e4b2/20170922/59c57779e4b08d2bc76a9cd2/59c5777ae4b0dc47945913c3_1351620000001-300030_t_1506113406759_44100_160_2.mp3 into database
+INFO:root:Inserted Pod Constitutional Episode Episode 07: Congress and citizens URL http://www.podtrac.com/pts/redirect.mp3/podcast.posttv.com/washpost-production/5951e18ce4b056ae8fa8e4b2/20170922/59c57779e4b08d2bc76a9cd2/59c5777ae4b0dc47945913c3_1351620000001-300030_t_1506113406759_44100_160_2.mp3 into database
+INFO:root:Inserting Pod This American Life Episode #626: White Haze URL https://www.podtrac.com/pts/redirect.mp3/podcast.thisamericanlife.org/podcast/626.mp3 into database
+INFO:root:Inserted Pod This American Life Episode #626: White Haze URL https://www.podtrac.com/pts/redirect.mp3/podcast.thisamericanlife.org/podcast/626.mp3 into database
+INFO:root:Inserting Pod The Daily 202"s Big Idea Episode Trump’s plutocracy problem complicates push for tax cuts URL https://www.podtrac.com/pts/redirect.mp3/podcast.posttv.com/washpost-production/5959a751e4b00dd62ac82bb5/20170926/59ca3b0ee4b07df8471ce7ad/59ca3b10e4b0dc4794591473_1351620000001-300030_t_1506425628630_44100_160_2.mp3 into database
+INFO:root:Inserted Pod The Daily 202"s Big Idea Episode Trump’s plutocracy problem complicates push for tax cuts URL https://www.podtrac.com/pts/redirect.mp3/podcast.posttv.com/washpost-production/5959a751e4b00dd62ac82bb5/20170926/59ca3b0ee4b07df8471ce7ad/59ca3b10e4b0dc4794591473_1351620000001-300030_t_1506425628630_44100_160_2.mp3 into database
+INFO:root:Inserting Pod The Daily 202"s Big Idea Episode Why the divider in chief embraces culture wars URL https://www.podtrac.com/pts/redirect.mp3/podcast.posttv.com/washpost-production/5959a751e4b00dd62ac82bb5/20170925/59c8efe9e4b08d2bc76a9d11/59c8f2a3e4b0dc4794591426_1351620000001-300040_t_1506341547309_44100_128_2.mp3 into database
+INFO:root:Inserted Pod The Daily 202"s Big Idea Episode Why the divider in chief embraces culture wars URL https://www.podtrac.com/pts/redirect.mp3/podcast.posttv.com/washpost-production/5959a751e4b00dd62ac82bb5/20170925/59c8efe9e4b08d2bc76a9d11/59c8f2a3e4b0dc4794591426_1351620000001-300040_t_1506341547309_44100_128_2.mp3 into database
+INFO:root:Inserting Pod The Daily 202"s Big Idea Episode In Alabama Senate debate, a noun, a verb and Donald Trump URL https://www.podtrac.com/pts/redirect.mp3/podcast.posttv.com/washpost-production/5959a751e4b00dd62ac82bb5/20170922/59c4ffbbe4b06902b8eec5f1/59c4ffbde4b0dc4794591355_1351620000001-300040_t_1506082757209_44100_128_2.mp3 into database
+INFO:root:Inserted Pod The Daily 202"s Big Idea Episode In Alabama Senate debate, a noun, a verb and Donald Trump URL https://www.podtrac.com/pts/redirect.mp3/podcast.posttv.com/washpost-production/5959a751e4b00dd62ac82bb5/20170922/59c4ffbbe4b06902b8eec5f1/59c4ffbde4b0dc4794591355_1351620000001-300040_t_1506082757209_44100_128_2.mp3 into database
+INFO:root:Inserting Pod Larry Wilmore: Black on the Air Episode The Fight for Reproductive Rights With Planned Parenthood’s Cecile Richards (Ep. 15) URL https://rss.art19.com/episodes/faf71b53-aae4-40d7-a9b9-9867723b144a.mp3 into database
+INFO:root:Inserted Pod Larry Wilmore: Black on the Air Episode The Fight for Reproductive Rights With Planned Parenthood’s Cecile Richards (Ep. 15) URL https://rss.art19.com/episodes/faf71b53-aae4-40d7-a9b9-9867723b144a.mp3 into database
+INFO:root:Pod The United States of Anxiety URL not found “Would you debate gravity?”: climate change in the classroom
+
+INFO:root:Pod Radiolab URL not found The Cold War
+
+INFO:root:Inserting Pod Only A Game Episode Latest Show: Baseball On Rosh Hashanah, Kaepernick Jersey, Maria Sharapova URL https://play.podtrac.com/npr-510052/npr.mc.tritondigital.com/NPR_510052/media/anon.npr-podcasts/podcast/510052/553030846/npr_553030846.mp3?orgId=1&d=3011&p=510052&story=553030846&t=podcast&e=553030846&ft=pod&f=510052 into database
+INFO:root:Inserted Pod Only A Game Episode Latest Show: Baseball On Rosh Hashanah, Kaepernick Jersey, Maria Sharapova URL https://play.podtrac.com/npr-510052/npr.mc.tritondigital.com/NPR_510052/media/anon.npr-podcasts/podcast/510052/553030846/npr_553030846.mp3?orgId=1&d=3011&p=510052&story=553030846&t=podcast&e=553030846&ft=pod&f=510052 into database
+INFO:root:Inserting Pod Lovett or Leave It Episode The Middle Finger on America's Right Hand URL https://rss.art19.com/episodes/d40a74a8-e9eb-4430-b9ea-eaff4a85e410.mp3 into database
+INFO:root:Inserted Pod Lovett or Leave It Episode The Middle Finger on America's Right Hand URL https://rss.art19.com/episodes/d40a74a8-e9eb-4430-b9ea-eaff4a85e410.mp3 into database
+INFO:root:Inserting Pod Story of the Day : NPR Episode Desperation In Puerto Rican Town Where 60 Percent Are Now Homeless URL https://play.podtrac.com/npr-381444905/npr.mc.tritondigital.com/NPR_381444905/media/anon.npr-mp3/npr/atc/2017/09/20170925_atc_in_puerto_rican_town_situation_turns_dire_at_packed_shelter.mp3?sc=16&orgId=1&forsearch=0&topicId=1127&d=217&p=2&story=553532405&t=progseg&e=553412865&seg=3&ft=ryop&f=1090 into database
+INFO:root:Inserted Pod Story of the Day : NPR Episode Desperation In Puerto Rican Town Where 60 Percent Are Now Homeless URL https://play.podtrac.com/npr-381444905/npr.mc.tritondigital.com/NPR_381444905/media/anon.npr-mp3/npr/atc/2017/09/20170925_atc_in_puerto_rican_town_situation_turns_dire_at_packed_shelter.mp3?sc=16&orgId=1&forsearch=0&topicId=1127&d=217&p=2&story=553532405&t=progseg&e=553412865&seg=3&ft=ryop&f=1090 into database
+INFO:root:Inserting Pod Story of the Day : NPR Episode Sen. John McCain Says He Wants A Bipartisan Effort To Overhaul Health Care URL https://play.podtrac.com/npr-381444905/npr.mc.tritondigital.com/NPR_381444905/media/anon.npr-mp3/npr/atc/2017/09/20170922_atc_sen_john_mccain_says_he_wants_a_bipartisan_effort_to_overhaul_health_care.mp3?sc=16&orgId=1&forsearch=0&topicId=1014&d=219&p=2&story=552986935&t=progseg&e=552835294&seg=1&ft=ryop&f=1090 into database
+INFO:root:Inserted Pod Story of the Day : NPR Episode Sen. John McCain Says He Wants A Bipartisan Effort To Overhaul Health Care URL https://play.podtrac.com/npr-381444905/npr.mc.tritondigital.com/NPR_381444905/media/anon.npr-mp3/npr/atc/2017/09/20170922_atc_sen_john_mccain_says_he_wants_a_bipartisan_effort_to_overhaul_health_care.mp3?sc=16&orgId=1&forsearch=0&topicId=1014&d=219&p=2&story=552986935&t=progseg&e=552835294&seg=1&ft=ryop&f=1090 into database
+INFO:root:Inserting Pod Linux Action News Episode Linux Action News 20 URL https://aphid.fireside.fm/d/1437767933/dec90738-e640-45e5-b375-4573052f4bf4/63c7ec23-c8bf-460c-a5eb-aa23e33887d7.mp3 into database
+INFO:root:Inserted Pod Linux Action News Episode Linux Action News 20 URL https://aphid.fireside.fm/d/1437767933/dec90738-e640-45e5-b375-4573052f4bf4/63c7ec23-c8bf-460c-a5eb-aa23e33887d7.mp3 into database
+INFO:root:Inserting Pod Freakonomics Radio Episode Why Learn Esperanto? (Special Feature)
+ URL https://www.podtrac.com/pts/redirect.mp3/audio.wnyc.org/freakonomics_extras/freakonomics_extras092517.mp3 into database
+INFO:root:Inserted Pod Freakonomics Radio Episode Why Learn Esperanto? (Special Feature)
+ URL https://www.podtrac.com/pts/redirect.mp3/audio.wnyc.org/freakonomics_extras/freakonomics_extras092517.mp3 into database
+INFO:root:Pod Freakonomics Radio URL not found March 2017 Freakonomics Flyaway to NYC Contest Rules
+
+INFO:root:Inserting Pod FanGraphs Baseball Episode FanGraphs Audio: Dayn Perry Elevates the Conversation URL http://media.blubrry.com/fangraphs/cdn.fangraphs.com/audio/FanGraphs-Audio-09-25-2017.mp3 into database
+INFO:root:Inserted Pod FanGraphs Baseball Episode FanGraphs Audio: Dayn Perry Elevates the Conversation URL http://media.blubrry.com/fangraphs/cdn.fangraphs.com/audio/FanGraphs-Audio-09-25-2017.mp3 into database
+INFO:root:Inserting Pod The Ezra Klein Show Episode Reihan Salam wants to remake the Republican Party -- again  URL https://dts.podtrac.com/redirect.mp3/rss.art19.com/episodes/2a4a6ca8-7b5a-4d01-b3ef-10af9c91c8ea.mp3 into database
+INFO:root:Inserted Pod The Ezra Klein Show Episode Reihan Salam wants to remake the Republican Party -- again  URL https://dts.podtrac.com/redirect.mp3/rss.art19.com/episodes/2a4a6ca8-7b5a-4d01-b3ef-10af9c91c8ea.mp3 into database
+INFO:root:Inserting Pod Pod Save America Episode "Stick to sports."  URL https://rss.art19.com/episodes/e646ebe6-4245-4ab9-a1d2-8d5c97ede8c8.mp3 into database
+INFO:root:Inserted Pod Pod Save America Episode "Stick to sports."  URL https://rss.art19.com/episodes/e646ebe6-4245-4ab9-a1d2-8d5c97ede8c8.mp3 into database
+INFO:root:Inserting Pod Vox"s The Weeds Episode Weeds Live: Canadian immigration and a health insurance experiment URL https://dts.podtrac.com/redirect.mp3/rss.art19.com/episodes/9c6c7b86-e3a5-4cc6-b9d5-c7e8545c8a6e.mp3 into database
+INFO:root:Inserted Pod Vox"s The Weeds Episode Weeds Live: Canadian immigration and a health insurance experiment URL https://dts.podtrac.com/redirect.mp3/rss.art19.com/episodes/9c6c7b86-e3a5-4cc6-b9d5-c7e8545c8a6e.mp3 into database
+INFO:root:Inserting Pod The Ringer MLB Show Episode Kneeling, Netting, and Otani (Ep. 112) URL http://rss.art19.com/episodes/f0148f75-3968-4b8e-b8d7-d7b3d32f32c2.mp3 into database
+INFO:root:Inserted Pod The Ringer MLB Show Episode Kneeling, Netting, and Otani (Ep. 112) URL http://rss.art19.com/episodes/f0148f75-3968-4b8e-b8d7-d7b3d32f32c2.mp3 into database
+INFO:root:Inserting Pod Dooley Noted Episode Fraud case is a 'big blow' for the Gators URL http://dts.podtrac.com/redirect.mp3/omnystudio.com/d/clips/a858b0a5-e5e6-4a14-9717-a70b010facc1/2e8d881b-21cf-4683-a9b4-a77600a8078c/53bff96c-fea8-4285-802a-a7f90149cc00/audio.mp3?utm_source=Podcast&in_playlist=2bbfdb41-040e-4002-8880-a77600a8079a into database
+INFO:root:Inserted Pod Dooley Noted Episode Fraud case is a 'big blow' for the Gators URL http://dts.podtrac.com/redirect.mp3/omnystudio.com/d/clips/a858b0a5-e5e6-4a14-9717-a70b010facc1/2e8d881b-21cf-4683-a9b4-a77600a8078c/53bff96c-fea8-4285-802a-a7f90149cc00/audio.mp3?utm_source=Podcast&in_playlist=2bbfdb41-040e-4002-8880-a77600a8079a into database
+INFO:root:Inserting Pod Up First Episode Tuesday, September 26th, 2017 URL https://play.podtrac.com/npr-510318/npr.mc.tritondigital.com/NPR_510318/media/anon.npr-mp3/npr/upfirst/2017/09/20170926_upfirst_92617upfirst.mp3?orgId=1&d=880&p=510318&story=553665787&t=podcast&e=553665787&ft=pod&f=510318 into database
+INFO:root:Inserted Pod Up First Episode Tuesday, September 26th, 2017 URL https://play.podtrac.com/npr-510318/npr.mc.tritondigital.com/NPR_510318/media/anon.npr-mp3/npr/upfirst/2017/09/20170926_upfirst_92617upfirst.mp3?orgId=1&d=880&p=510318&story=553665787&t=podcast&e=553665787&ft=pod&f=510318 into database
+INFO:root:Inserting Pod Up First Episode Monday, September 25th, 2017 URL https://play.podtrac.com/npr-510318/npr.mc.tritondigital.com/NPR_510318/media/anon.npr-mp3/npr/upfirst/2017/09/20170925_upfirst_92517upfirst.mp3?orgId=1&d=840&p=510318&story=553409714&t=podcast&e=553409714&ft=pod&f=510318 into database
+INFO:root:Inserted Pod Up First Episode Monday, September 25th, 2017 URL https://play.podtrac.com/npr-510318/npr.mc.tritondigital.com/NPR_510318/media/anon.npr-mp3/npr/upfirst/2017/09/20170925_upfirst_92517upfirst.mp3?orgId=1&d=840&p=510318&story=553409714&t=podcast&e=553409714&ft=pod&f=510318 into database
+INFO:root:Inserting Pod FiveThirtyEight Politics Episode Trump vs. The NFL URL http://play.podtrac.com/espn-fivethirtyeightpolitics/c.espnradio.com/s:J1X3L/audio/3403155/fivethirtyeightpolitics_2017-09-25-172255.64k.mp3 into database
+INFO:root:Inserted Pod FiveThirtyEight Politics Episode Trump vs. The NFL URL http://play.podtrac.com/espn-fivethirtyeightpolitics/c.espnradio.com/s:J1X3L/audio/3403155/fivethirtyeightpolitics_2017-09-25-172255.64k.mp3 into database
+INFO:root:Inserting Pod 99% Invisible Episode 277- Ponte City Tower URL https://dts.podtrac.com/redirect.mp3/media.blubrry.com/99percentinvisible/dovetail.prxu.org/99pi/9992b1b9-07f2-4abe-a7c8-0d5e8f78689d/277-Ponte-City-Tower.mp3 into database
+INFO:root:Inserted Pod 99% Invisible Episode 277- Ponte City Tower URL https://dts.podtrac.com/redirect.mp3/media.blubrry.com/99percentinvisible/dovetail.prxu.org/99pi/9992b1b9-07f2-4abe-a7c8-0d5e8f78689d/277-Ponte-City-Tower.mp3 into database
+INFO:root:Pod Radiolab Presents: More Perfect URL not found Object Anyway
+
+INFO:root:Pod Note to Self URL not found To Post or Not To Post: Take Our (Quick) Surveys
+
+INFO:root:Got Pod Details
+INFO:root:Getting Run Complete
+INFO:root:Getting Run Complete Date
+INFO:root:Got run complete date 2017-09-26 19:03:39.163971+00:00
+INFO:root:Got Run Complete
+INFO:root:Downloading Pods
+INFO:root:Getting Episode info from database
+INFO:root:Got Episode info from database
+INFO:root:Getting Extension Info
+INFO:root:No Extention
+INFO:root:Getting Extension Info
+INFO:root:Has Extension
+INFO:root:Pod Name: The Daily 202s Big Idea
+Episode Name: Trump’s plutocracy problem complicates push for tax cuts
+Episode Description: The dichotomy between what the president promises his tax plan will do and what’s he’s planning to unveil on Wednesday is just the latest example of the president’s actions not backing up his rhetoric.
+URL: https://www.podtrac.com/pts/redirect.mp3/podcast.posttv.com/washpost-production/5959a751e4b00dd62ac82bb5/20170926/59ca3b0ee4b07df8471ce7ad/59ca3b10e4b0dc4794591473_1351620000001-300030_t_1506425628630_44100_160_2.mp3
+Publish Date: 20170926_073334
+*******************
+INFO:root:Getting Extension Info
+INFO:root:Has Extension
+INFO:root:Pod Name: Up First
+Episode Name: Tuesday September 26th 2017
+Episode Description: What could a primary race in Alabama signal about the future of the Republican party? Why there's more scrutiny of how Facebook might have influenced the American elections in 2016. Also, for the first time in decades, Angola celebrates the inauguration of a new president.
+URL: https://play.podtrac.com/npr-510318/npr.mc.tritondigital.com/NPR_510318/media/anon.npr-mp3/npr/upfirst/2017/09/20170926_upfirst_92617upfirst.mp3?orgId=1&d=880&p=510318&story=553665787&t=podcast&e=553665787&ft=pod&f=510318
+Publish Date: 20170926_055100
+*******************
+INFO:root:Getting Extension Info
+INFO:root:Has Extension
+INFO:root:Pod Name: Freakonomics Radio
+Episode Name: Why Learn Esperanto (Special Feature)
+Episode Description: <p>A language invented in the 19th century, and meant to be universal, it never really caught on. So why does a group of Esperantists from around the world gather once a year to celebrate their bond?</p>
+
+URL: https://www.podtrac.com/pts/redirect.mp3/audio.wnyc.org/freakonomics_extras/freakonomics_extras092517.mp3
+Publish Date: 20170925_230000
+*******************
+INFO:root:Getting Extension Info
+INFO:root:No Extention
+INFO:root:Getting Extension Info
+INFO:root:Has Extension
