@@ -1,2 +1,4 @@
-/data/
+data/
 .gitignore
+configs/autopod.log
+configs/lastRun
