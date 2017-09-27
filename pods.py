@@ -13,9 +13,9 @@ import urllib3
 import os
 import logging
 
-logging.getLogger("urllib3").setLevel(logging.WARNING)
-logging.getLogger("requests").setLevel(logging.WARNING)
-logging.getLogger("chardet").setLevel(logging.WARNING)
+logging.getLogger('urllib3').setLevel(logging.WARNING)
+logging.getLogger('requests').setLevel(logging.WARNING)
+logging.getLogger('chardet').setLevel(logging.WARNING)
 urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 
 
@@ -121,7 +121,9 @@ def get_pod_details(db, pods, last_date):
     except Exception as ex:
         logger.warning('Exception: {}'.format(ex))
         logger.warning('error in load_db')
-
+def strip_for_saving(fn):
+    return re.sub(r'[\\/:"*,?<>|\n]+', '', fn)
+    
 def download_pods(db):
     global logger
     try:
@@ -136,8 +138,8 @@ def download_pods(db):
             ''')
         logger.info('Got Episode info from database')
         for row in cur.fetchall():
-            r_pod = re.sub(r'[\\/:"*,?<>|\n]+', '', row[0])
-            r_episode = re.sub(r'[\\/:"*,?<>|\n]+', '', row[1])
+            r_pod = strip_for_saving(row[0])
+            r_episode = strip_for_saving(row[1])
             r_description = row[2]
             r_url = row[3]
             r_published = datetime.strftime(parser.parse(row[4]),'%Y%m%d_%H%M%S')
@@ -180,7 +182,7 @@ def setup_custom_logger(name):
     path = 'configs/autopod.log'
     formatter = logging.Formatter(fmt='%(asctime)s | %(name)s | %(levelname)-8s | %(message)s',
                                   datefmt='%Y-%m-%d %H:%M:%S')
-    handler = logging.FileHandler(path, mode='a')
+    handler = logging.FileHandler(path, mode='a',encoding = 'UTF-8')
     handler.setFormatter(formatter)
     logger = logging.getLogger(name)
     logger.setLevel(logging.DEBUG)
@@ -217,5 +219,5 @@ def main():
         logger.warning('Error')
     logger.info('Ending Script')
 
-
-main()
+if __name__ =='__main__':
+    main()
