@@ -21,6 +21,7 @@ urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 
 #todo
 '''
+ffmpeg -i input.mp4 -filter:a "atempo=0.5,atempo=0.5" -vn output.aac
 - speed up pods
 - log/delete listened
 - GUI?
