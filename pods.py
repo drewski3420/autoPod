@@ -12,20 +12,29 @@ import sqlite3 as sql
 import urllib3
 import os
 import logging
-
-logging.getLogger('urllib3').setLevel(logging.WARNING)
-logging.getLogger('requests').setLevel(logging.WARNING)
-logging.getLogger('chardet').setLevel(logging.WARNING)
-urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
+import tempfile
+import subprocess
 
 
 #todo
 '''
-ffmpeg -i input.mp4 -filter:a "atempo=0.5,atempo=0.5" -vn output.aac
-- speed up pods
 - log/delete listened
 - GUI?
 '''
+def process_mp3(contents,output_file,speed):
+    logger.info('Starting File Conversion')
+    FFMPEG_BIN = "configs/ffmpeg.exe" 
+    with tempfile.NamedTemporaryFile(mode='wb',delete=False) as tf: 
+        tf.write(contents) 
+        temp_file = tf.name 
+
+    subprocess.call([FFMPEG_BIN 
+            ,'-y' 
+            ,'-i',temp_file 
+            ,'-filter:a','atempo={}'.format(speed) 
+            ,'-vn',output_file]) 
+    os.remove(temp_file)
+    logger.info('Ending File Conversion')
 
 def create_conn():
     global logger
@@ -35,13 +44,13 @@ def create_conn():
         logger.info('Creating Tables')
         cur.execute('''
             create table episodes(pod_name text, episode_name text
-            ,episode_title text, episode_description text, url text, published timestamp)
+            ,episode_title text, episode_description text, url text, published timestamp, playback_speed real)
             ''')
         db.commit()
         logger.info('Created Tables')
         return db
-    except:
-        logger.warning('error in create_conn')
+    except Exception as ex:
+        logger.warning('error in create_conn: {}'.format(ex))
   
 def write_last_run(run_complete):
     global logger
@@ -50,8 +59,8 @@ def write_last_run(run_complete):
         with open('configs/lastRun','w') as data_file:
             data_file.write(str(run_complete))
         logger.info('Wrote Last Run Date {}'.format(run_complete))
-    except:
-        logger.warning('error in write_last_run')
+    except Exception as ex:
+        logger.warning('error in write_last_run: {}'.format(ex))
 
 def get_pod_list():
     global logger
@@ -61,8 +70,8 @@ def get_pod_list():
             pods = json.load(data_file)
         logger.info('Got Pod List from JSON file')
         return pods
-    except:
-        logger.warning('error in get_pod_list')
+    except Exception as ex:
+        logger.warning('error in get_pod_list: {}'.format(ex))
     
 
 def get_last_run():
@@ -74,8 +83,8 @@ def get_last_run():
             last_date = parser.parse(f.read())
         logger.info('Got Last Run Date {}'.format(last_date))
         return last_date
-    except:
-        logger.warning('error in print_last_run')
+    except Exception as ex:
+        logger.warning('error in print_last_run: {}'.format(ex))
 
 def get_pod_details(db, pods, last_date):
     global logger
@@ -86,6 +95,7 @@ def get_pod_details(db, pods, last_date):
             pod_name = b['pod_name']
             pod_name = pod_name.replace('\r','').replace('\n','')
             link = b['pod_url']
+            playback_speed = b['playback_speed']
             r = requests.get(link, verify = False)
             soup = bs(r.text, features = 'xml')
             for episode in soup.find_all('item'):
@@ -112,16 +122,15 @@ def get_pod_details(db, pods, last_date):
                     try:
                         logger.info('Inserting Pod {} Episode {} URL {} into database'.format(pod_name, title, url))
                         cur.execute('''
-                            insert into episodes(pod_name, episode_name,episode_description, url, published)
-                            values (?,?,?,?,?)''',(pod_name, title, description, url, published))
+                            insert into episodes(pod_name, episode_name,episode_description, url, published, playback_speed)
+                            values (?,?,?,?,?,?)''',(pod_name, title, description, url, published,playback_speed))
                         db.commit()
                         logger.info('Inserted Pod {} Episode {} URL {} into database'.format(pod_name, title, url))
                     except Exception as ex:
                         logger.warning('Error {}: \n Pod Name: {}\n Episode Title: {}'.format(ex, pod_name, title))
         return db
     except Exception as ex:
-        logger.warning('Exception: {}'.format(ex))
-        logger.warning('error in load_db')
+        logger.warning('error in load_db: {}'.format(ex))
 def strip_for_saving(fn):
     return re.sub(r'[\\/:"*,?<>|\n]+', '', fn)
     
@@ -133,7 +142,7 @@ def download_pods(db):
         cur = db.cursor()
         cur.execute('''
             Select 
-                pod_name, episode_name, episode_description, url, published
+                pod_name, episode_name, episode_description, url, published, playback_speed
             from episodes
             order by published desc
             ''')
@@ -144,6 +153,7 @@ def download_pods(db):
             r_description = row[2]
             r_url = row[3]
             r_published = datetime.strftime(parser.parse(row[4]),'%Y%m%d_%H%M%S')
+            r_playback = round(row[5],2)
             response = requests.get(r_url, verify = False)
             if is_content_type_ok(response.headers['content-type']):
                 pod_path = os.path.join(download_path,r_pod)
@@ -152,11 +162,10 @@ def download_pods(db):
                     logger.info('Created Directory {}'.format(pod_path))
                 pod_file_name = r_published + '-' + r_episode + '.mp3'
                 episode_path = os.path.join(pod_path,pod_file_name)
-                with open(episode_path, 'wb') as f:
-                    f.write(response.content)
-                    logger.info('''Pod Name: %s\nEpisode Name: %s\nEpisode Description: %s\nURL: %s\nPublish Date: %s\n*******************''' %(r_pod,r_episode,r_description,r_url,r_published))
+                logger.info('''Pod Name: %s\nEpisode Name: %s\nEpisode Description: %s\nURL: %s\nPublish Date: %s\n*******************''' %(r_pod,r_episode,r_description,r_url,r_published))
+                process_mp3(response.content,episode_path,r_playback)
     except Exception as ex:
-        logger.warning('error in download pods')
+        logger.warning('error in download pods: {}'.format(ex))
 
 def is_content_type_ok(content_type):
     global logger
@@ -176,8 +185,8 @@ def get_run_end_date():
         run_complete = datetime.now(pytz.utc)
         logger.info('Got run complete date {}'.format(run_complete))
         return run_complete
-    except:
-        logger.warning('error in get_run_end_date')
+    except Exception as ex:
+        logger.warning('error in get_run_end_date: {}'.format(ex))
 
 def setup_custom_logger(name):
     path = 'configs/autopod.log'
@@ -191,6 +200,10 @@ def setup_custom_logger(name):
     return logger
 
 def main():
+    logging.getLogger('urllib3').setLevel(logging.WARNING)
+    logging.getLogger('requests').setLevel(logging.WARNING)
+    logging.getLogger('chardet').setLevel(logging.WARNING)
+    urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
     global logger
     logger = setup_custom_logger('autopod')
     try:
@@ -216,8 +229,8 @@ def main():
         logger.info('Writing Last Run')
         write_last_run(run_complete)
         logger.info('Wrote Last Run')
-    except:
-        logger.warning('Error')
+    except Exception as ex:
+        logger.warning('Error: {}'.format(ex))
     logger.info('Ending Script')
 
 if __name__ =='__main__':

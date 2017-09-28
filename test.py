@@ -13,11 +13,36 @@ import urllib3
 import os
 import logging
 import subprocess
-#ffmpeg -i input.mp4 -filter:a "atempo=0.5,atempo=0.5" -vn output.aac
-FFMPEG_BIN = "configs/ffmpeg.exe" # on Windows
-input_file = "data/Radiolab/20170926_175546-Driverless Dilemma.mp3"
-output_file = "data/Radiolab/output_test.mp3"
-subprocess.call([FFMPEG_BIN
-                     ,'-i',input_file
-                     ,'-filter:a','atempo=1.5'
-                     ,'-vn',output_file])
+import tempfile as t
+import shutil
+
+'''
+def process_mp3(file,speed):
+    FFMPEG_BIN = "configs/ffmpeg.exe" # on Windows
+    with open(input_file,'rb') as f:
+        data = f.read()
+        with t.NamedTemporaryFile(mode='wb',delete=False) as tf:
+            tf.write(data)
+            temp_file = tf.name
+    
+    subprocess.call([FFMPEG_BIN
+                     ,'-y'
+                     ,'-i',temp_file
+                     ,'-filter:a','atempo={}'.format(speed)
+                     ,'-vn',input_file])
+    os.remove(temp_file)
+    
+
+input_file = "data/Note to Self/20170927_000000-Ghosting Simmering and Icing with Esther Perel.mp3"
+speed = '.75'
+process_mp3(input_file,speed)
+
+
+
+with open('configs/pods.json') as data_file:
+    pods = json.load(data_file)
+'''
+with open('configs/pods.json') as data_file:
+    pods = json.load(data_file)
+
+
