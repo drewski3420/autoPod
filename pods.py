@@ -1,26 +1,10 @@
-import sys
-import mimetypes
-import json
-import re
-import pytz
-from dateutil import parser
+import sqlite3 as sql,urllib3,os,logging,tempfile,subprocess,sys,mimetypes,json,re,pytz,requests
+import dateutil.parser
 from dateutil.tz import tzutc as tz
 from datetime  import datetime
-import requests
 from bs4 import BeautifulSoup as bs
-import sqlite3 as sql   
-import urllib3
-import os
-import logging
-import tempfile
-import subprocess
 
 
-#todo
-'''
-- log/delete listened
-- GUI?
-'''
 def process_mp3(contents,output_file,speed):
     logger.info('Starting File Conversion')
     FFMPEG_BIN = "configs/ffmpeg.exe" 
