@@ -1,0 +1,6 @@
+data/
+.gitignore
+configs/autopod.log
+configs/lastRun
+__pycache__
+*.pyc

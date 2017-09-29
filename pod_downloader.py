@@ -1,9 +1,11 @@
-import sqlite3 as sql,urllib3,os,logging,tempfile,subprocess,sys,mimetypes,json,re,pytz,requests
-import dateutil.parser
+import sqlite3 as sql,urllib3,os,tempfile,subprocess,sys,mimetypes,json,re,pytz,requests, pod_logger
+from dateutil import parser
 from dateutil.tz import tzutc as tz
 from datetime  import datetime
 from bs4 import BeautifulSoup as bs
 
+class PodException(Exception):
+    pass
 
 def process_mp3(contents,output_file,speed):
     logger.info('Starting File Conversion')
@@ -35,6 +37,7 @@ def create_conn():
         return db
     except Exception as ex:
         logger.warning('error in create_conn: {}'.format(ex))
+        raise PodException
   
 def write_last_run(run_complete):
     global logger
@@ -45,6 +48,7 @@ def write_last_run(run_complete):
         logger.info('Wrote Last Run Date {}'.format(run_complete))
     except Exception as ex:
         logger.warning('error in write_last_run: {}'.format(ex))
+        raise PodException
 
 def get_pod_list():
     global logger
@@ -56,6 +60,7 @@ def get_pod_list():
         return pods
     except Exception as ex:
         logger.warning('error in get_pod_list: {}'.format(ex))
+        raise PodException
     
 
 def get_last_run():
@@ -69,10 +74,12 @@ def get_last_run():
         return last_date
     except Exception as ex:
         logger.warning('error in print_last_run: {}'.format(ex))
+        raise PodException
 
 def get_pod_details(db, pods, last_date):
     global logger
     try:
+        logger.info('Getting Pod Details')
         tz = pytz.timezone('US/Eastern')
         cur = db.cursor()
         for a,b in pods.items():
@@ -100,21 +107,23 @@ def get_pod_details(db, pods, last_date):
                 try:
                     published = parser.parse(episode.pubDate.text).astimezone(tz)
                 except:
-                    logger.error('Pod {} Published Date not found {}'.format(pod_name,title))
+                    logger.error('Published Date not found. Pod {} Episode {}'.format(pod_name,title))
                     break
                 if published >= last_date:
                     try:
-                        logger.info('Inserting Pod {} Episode {} URL {} into database'.format(pod_name, title, url))
+                        logger.info('Inserting into database. Pod {} Episode {} URL {} '.format(pod_name, title, url))
                         cur.execute('''
                             insert into episodes(pod_name, episode_name,episode_description, url, published, playback_speed)
                             values (?,?,?,?,?,?)''',(pod_name, title, description, url, published,playback_speed))
                         db.commit()
-                        logger.info('Inserted Pod {} Episode {} URL {} into database'.format(pod_name, title, url))
+                        logger.info('Inserted into database. Pod {} Episode {} URL {}'.format(pod_name, title, url))
                     except Exception as ex:
                         logger.warning('Error {}: \n Pod Name: {}\n Episode Title: {}'.format(ex, pod_name, title))
         return db
     except Exception as ex:
         logger.warning('error in load_db: {}'.format(ex))
+        raise PodException
+
 def strip_for_saving(fn):
     return re.sub(r'[\\/:"*,?<>|\n]+', '', fn)
     
@@ -146,10 +155,11 @@ def download_pods(db):
                     logger.info('Created Directory {}'.format(pod_path))
                 pod_file_name = r_published + '-' + r_episode + '.mp3'
                 episode_path = os.path.join(pod_path,pod_file_name)
-                logger.info('''Pod Name: %s\nEpisode Name: %s\nEpisode Description: %s\nURL: %s\nPublish Date: %s\n*******************''' %(r_pod,r_episode,r_description,r_url,r_published))
+                logger.info('Pod Name: {} Episode Name: {} URL: {} Publish Date: {}'.format(r_pod,r_episode,r_url,r_published))
                 process_mp3(response.content,episode_path,r_playback)
     except Exception as ex:
         logger.warning('error in download pods: {}'.format(ex))
+        raise PodException
 
 def is_content_type_ok(content_type):
     global logger
@@ -161,6 +171,7 @@ def is_content_type_ok(content_type):
     else:
         logger.info('Has Extension')
         return True
+    logger.info('Got Extension Info')
                        
 def get_run_end_date():
     global logger
@@ -169,53 +180,28 @@ def get_run_end_date():
         run_complete = datetime.now(pytz.utc)
         logger.info('Got run complete date {}'.format(run_complete))
         return run_complete
+        logger.info('Got Run Complete Date')
     except Exception as ex:
         logger.warning('error in get_run_end_date: {}'.format(ex))
-
-def setup_custom_logger(name):
-    path = 'configs/autopod.log'
-    formatter = logging.Formatter(fmt='%(asctime)s | %(name)s | %(levelname)-8s | %(message)s',
-                                  datefmt='%Y-%m-%d %H:%M:%S')
-    handler = logging.FileHandler(path, mode='a',encoding = 'UTF-8')
-    handler.setFormatter(formatter)
-    logger = logging.getLogger(name)
-    logger.setLevel(logging.DEBUG)
-    logger.addHandler(handler)
-    return logger
+        raise PodException
 
 def main():
-    logging.getLogger('urllib3').setLevel(logging.WARNING)
-    logging.getLogger('requests').setLevel(logging.WARNING)
-    logging.getLogger('chardet').setLevel(logging.WARNING)
     urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
     global logger
-    logger = setup_custom_logger('autopod')
+    logger = pod_logger.setup_custom_logger('pod_downloader')
     try:
         logger.info('Beginning Script')
-        logger.info('Creating Connection')
         db = create_conn()
-        logger.info('Created Connection')
-        logger.info('Getting Pods')
         pods = get_pod_list()
-        logger.info('Got Pods')
-        logger.info('Getting Last Date')
         last_date = get_last_run()
-        logger.info('Got Last Date')
-        logger.info('Getting Pod Details')
         db = get_pod_details(db, pods, last_date)
-        logger.info('Got Pod Details')
-        logger.info('Getting Run Complete')
         run_complete = get_run_end_date()
-        logger.info('Got Run Complete')
-        logger.info('Downloading Pods')
         download_pods(db)
-        logger.info('Downloaded Pods')
-        logger.info('Writing Last Run')
         write_last_run(run_complete)
-        logger.info('Wrote Last Run')
     except Exception as ex:
         logger.warning('Error: {}'.format(ex))
-    logger.info('Ending Script')
+    finally:
+        logger.info('Ending Script')
 
 if __name__ =='__main__':
     main()
