@@ -1,16 +1,14 @@
+class PodEpisode():
+    def __init__(self):
+        self.pod_name = None
+        self.episode_name = None
+        self.episode_title = None
+        self.episode_description = None
+        self.episode_url = None
+        self.episode_published = None
+        self.playback_speed = None
+    
 
-class SomethingError(Exception):
-    pass
-
-def make_error(x,y):
-    try:
-        a = x/y
-        return a
-    except:
-        raise SomethingError('it broke')
-
-
-try:
-    a = make_error(1,0)
-except SomethingError as e:
-    print(str(e))
+pod = PodEpisode()
+pod.pod_name = 'Pod Name'
+print(pod.pod_name)

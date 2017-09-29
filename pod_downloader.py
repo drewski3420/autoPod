@@ -9,7 +9,7 @@ class PodException(Exception):
 
 def process_mp3(contents,output_file,speed):
     logger.info('Starting File Conversion')
-    FFMPEG_BIN = "configs/ffmpeg.exe" 
+    FFMPEG_BIN = "configs/ffmpeg.exe" #WINDOWS
     with tempfile.NamedTemporaryFile(mode='wb',delete=False) as tf: 
         tf.write(contents) 
         temp_file = tf.name 
@@ -38,7 +38,7 @@ def create_conn():
     except Exception as ex:
         logger.warning('error in create_conn: {}'.format(ex))
         raise PodException
-  
+
 def write_last_run(run_complete):
     global logger
     try:
@@ -60,8 +60,7 @@ def get_pod_list():
         return pods
     except Exception as ex:
         logger.warning('error in get_pod_list: {}'.format(ex))
-        raise PodException
-    
+        raise PodException   
 
 def get_last_run():
     global logger
@@ -126,7 +125,7 @@ def get_pod_details(db, pods, last_date):
 
 def strip_for_saving(fn):
     return re.sub(r'[\\/:"*,?<>|\n]+', '', fn)
-    
+
 def download_pods(db):
     global logger
     try:
@@ -172,7 +171,7 @@ def is_content_type_ok(content_type):
         logger.info('Has Extension')
         return True
     logger.info('Got Extension Info')
-                       
+
 def get_run_end_date():
     global logger
     try:
