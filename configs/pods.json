@@ -1,5 +1,5 @@
 {
-    "1.5": {
+    "0": {
         "pod_name": "Reply All",
         "pod_url": "HTTP://Feeds.gimletmedia.com/hearreplyall",
         "playback_speed": "1.5"
@@ -12,7 +12,7 @@
     "2": {
         "pod_name": "Constitutional",
         "pod_url": "http://podcast.posttv.com/itunes-5951e18ce4b056ae8fa8e4b2.xml",
-		"playback_speed": "1.6"
+        "playback_speed": "1.6"
     },
     "3": {
         "pod_name": "Kurt Vonneguys",
@@ -368,5 +368,10 @@
         "pod_name": "The World in Words",
         "pod_url": "http://feeds.feedburner.com/pri/world-words",
         "playback_speed": "1.5"
+    },
+    "74": {
+        "pod_name": "Serial",
+        "pod_url": "http://feeds.serialpodcast.org/serialpodcast",
+        "playback_speed": "1"
     }
 }

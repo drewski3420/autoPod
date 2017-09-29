@@ -1,10 +1,9 @@
-import argparse, requests
+import argparse, requests, json
 from bs4 import BeautifulSoup as bs
 
 def arg_parser():
     global args
     parser = argparse.ArgumentParser()
-    parser.add_argument('--add_pod', nargs=2, help='Provide Pod Name to add to list')
     parser.add_argument('--search_pod', help='Put Search terms to find new podcasts')
     args = parser.parse_args()
 
@@ -29,9 +28,36 @@ def search():
     return pod_results
 
 def add_pod(r):
+    with open('configs/pods.json','r') as f:
+        pods = json.load(f)
+
+    newpods = {}
+    i = 0
+    for n,p in pods.items():
+        pod_name = p['pod_name']
+        pod_url = p['pod_url']
+        playback_speed = p['playback_speed']
+
+        val = {'pod_name' : pod_name
+               ,'pod_url' : pod_url
+               ,'playback_speed': playback_speed
+               }
+        newpods[i] = val
+        i+=1
+    playback_speed = input('Provide default playback speed (default is 1.5):')
+    playback_speed = playback_speed if playback_speed else '1.5'
     
+    val = {'pod_name' : r['pod_name']
+            ,'pod_url' : r['pod_url']
+            ,'playback_speed': playback_speed
+            }
+    newpods[i] = val
+    
+    with open('configs/pods.json','w') as f:
+        json.dump(newpods,f,indent=4)
+
 def menu(pod_results):
-    print('Pods found with search term {}'.format(args.search_pod))
+    print('Pods found with search term "{}":'.format(args.search_pod))
     for r in pod_results:
         print('{}: {} ({})'.format(r['number'],r['pod_name'],r['pod_url']))
     choice = input('Choose a number to add:')
@@ -45,8 +71,9 @@ def menu(pod_results):
 def main():
     global args
     arg_parser()
-    search_results = search()
-    menu(search_results)
+    if arg.search_pod:
+        search_results = search()
+        menu(search_results)
 
 if __name__ == '__main__':
     main()
