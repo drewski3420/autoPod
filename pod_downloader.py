@@ -1,7 +1,7 @@
 import sqlite3 as sql,urllib3,os,tempfile,subprocess,sys,mimetypes,json,re,pytz,requests, pod_logger
 from dateutil import parser
 from dateutil.tz import tzutc as tz
-from datetime  import datetime
+from datetime  import datetime, timedelta
 from bs4 import BeautifulSoup as bs
 
 class PodException(Exception):
@@ -67,8 +67,11 @@ def get_last_run():
     try:
         logger.info('Getting Last Run Date')
         last_run_path = 'configs/lastRun'
-        with open(last_run_path,'r') as f:
-            last_date = parser.parse(f.read())
+        if os.path.exists(last_run_path): #last run is found
+            with open(last_run_path,'r') as f:
+                last_date = parser.parse(f.read())
+        else:
+            last_date = datetime.now(pytz.utc) - timedelta(days = 3)
         logger.info('Got Last Run Date {}'.format(last_date))
         return last_date
     except Exception as ex:
@@ -82,10 +85,14 @@ def get_pod_details(db, pods, last_date):
         tz = pytz.timezone('US/Eastern')
         cur = db.cursor()
         for a,b in pods.items():
-            pod_name = b['pod_name']
+			pod_name = u' '.join((b['pod_name'])).encode('utf-8').strip()
+            #pod_name = b['pod_name']
             pod_name = pod_name.replace('\r','').replace('\n','')
-            link = b['pod_url']
+            #link = b['pod_url']
+            link = u' '.join((b['url'])).encode('utf-8').strip()
             playback_speed = b['playback_speed']
+            playback_speed = u' '.join((b['playback_speed'])).encode('utf-8').strip()
+            logger.info('Pod {}|link {}|speed {}'.format(pod_name, link, playback_speed))
             r = requests.get(link, verify = False)
             soup = bs(r.text, features = 'xml')
             for episode in soup.find_all('item'):
@@ -101,7 +108,7 @@ def get_pod_details(db, pods, last_date):
                 try:
                     url = episode.enclosure.get('url')
                 except:
-                    logger.error('Pod {} URL not found {}'.format(pod_name,title))
+                    logger.error('URL not found. Pod {} Episode {}'.format(pod_name,title))
                     break
                 try:
                     published = parser.parse(episode.pubDate.text).astimezone(tz)
@@ -118,9 +125,11 @@ def get_pod_details(db, pods, last_date):
                         logger.info('Inserted into database. Pod {} Episode {} URL {}'.format(pod_name, title, url))
                     except Exception as ex:
                         logger.warning('Error {}: \n Pod Name: {}\n Episode Title: {}'.format(ex, pod_name, title))
+                        raise PodException
         return db
     except Exception as ex:
         logger.warning('error in load_db: {}'.format(ex))
+        logger.warning('{} {} {}'.format(sys.exc_info()[0].__name__, os.path.basename(sys.exc_info()[2].tb_frame.f_code.co_filename), sys.exc_info()[2].tb_lineno))
         raise PodException
 
 def strip_for_saving(fn):
@@ -172,18 +181,6 @@ def is_content_type_ok(content_type):
         return True
     logger.info('Got Extension Info')
 
-def get_run_end_date():
-    global logger
-    try:
-        logger.info('Getting Run Complete Date')
-        run_complete = datetime.now(pytz.utc)
-        logger.info('Got run complete date {}'.format(run_complete))
-        return run_complete
-        logger.info('Got Run Complete Date')
-    except Exception as ex:
-        logger.warning('error in get_run_end_date: {}'.format(ex))
-        raise PodException
-
 def main():
     urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
     global logger
@@ -194,11 +191,12 @@ def main():
         pods = get_pod_list()
         last_date = get_last_run()
         db = get_pod_details(db, pods, last_date)
-        run_complete = get_run_end_date()
+        run_complete = datetime.now(pytz.utc)
         download_pods(db)
         write_last_run(run_complete)
     except Exception as ex:
         logger.warning('Error: {}'.format(ex))
+        raise PodException
     finally:
         logger.info('Ending Script')
 
